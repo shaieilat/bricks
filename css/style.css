@@ -25,3 +25,18 @@ body {
 	bottom: 70px;
 	left: 50%;
 }
+
+.bricks-container {
+	position: absolute;
+	top: 40px;
+	text-align: center;
+	font-size: 0;
+}
+
+.brick {
+	display: inline-block;
+	width: 80px;
+	height: 30px;
+	background: #ccc;
+	margin: 2px;
+}
