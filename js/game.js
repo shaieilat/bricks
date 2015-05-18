@@ -63,33 +63,32 @@ Game.prototype.checkBallCollision = function() {
 			alert('game over');
 		} else {
 			for (var i = 0; i < that.bricks.length; i++) {
-				//if (i== that.bricksInRow - 1) {debugger}
 				if (that.bricks[i] == undefined) {
 					//
 				} else if (that.ball.ball().offsetLeft + that.ball.ballSize == that.bricks[i].offset.left && 
-					that.ball.ball().offsetTop >= that.bricks[i].offset.top - Math.floor((that.ball.ballSize / 2)) && 
-					that.ball.ball().offsetTop <= that.bricks[i].offset.top + that.bricks[i].brickHeight + Math.ceil((that.ball.ballSize / 2)) && 
+					that.ball.ball().offsetTop >= that.bricks[i].offset.top - Math.ceil((that.ball.ballSize / 2)) && 
+					that.ball.ball().offsetTop <= that.bricks[i].offset.top + that.bricks[i].brickHeight && 
 					(that.bricks[i - 1] == undefined || i % that.bricksInRow == 0)) {
 					that.bricks[i].collision();
 					console.log('left side');
 					that.ball.direction = that.ball.direction == 2 ? 1 : 4;
 				} else if (that.ball.ball().offsetLeft == that.bricks[i].offset.left + that.bricks[i].brickWidth && 
-					that.ball.ball().offsetTop >= that.bricks[i].offset.top - Math.floor((that.ball.ballSize / 2)) && 
-					that.ball.ball().offsetTop <= that.bricks[i].offset.top + that.bricks[i].brickHeight + Math.ceil((that.ball.ballSize / 2)) &&
+					that.ball.ball().offsetTop >= that.bricks[i].offset.top - Math.ceil((that.ball.ballSize / 2)) && 
+					that.ball.ball().offsetTop <= that.bricks[i].offset.top + that.bricks[i].brickHeight &&
 					(that.bricks[i + 1] == undefined || ((i + 1) % that.bricksInRow == 0))) {
 					that.bricks[i].collision();
 					console.log('right side');
 					that.ball.direction = that.ball.direction == 1 ? 2 : 3;
 				} else if (that.ball.ball().offsetTop + that.ball.ballSize == that.bricks[i].offset.top && 
-					that.ball.ball().offsetLeft >= that.bricks[i].offset.left - Math.floor((that.ball.ballSize / 2)) &&
-					that.ball.ball().offsetLeft <= that.bricks[i].offset.left + that.bricks[i].brickWidth + Math.ceil((that.ball.ballSize / 2)) &&
+					that.ball.ball().offsetLeft >= that.bricks[i].offset.left - Math.ceil((that.ball.ballSize / 2)) &&
+					that.ball.ball().offsetLeft <= that.bricks[i].offset.left + that.bricks[i].brickWidth &&
 					that.bricks[i - that.bricksInRow] == undefined) {
 					that.bricks[i].collision();
 					console.log('top side');
 					that.ball.direction = that.ball.direction == 3 ? 2 : 1;
 				} else if (that.ball.ball().offsetTop == that.bricks[i].offset.top + that.bricks[i].brickHeight && 
-					that.ball.ball().offsetLeft >= that.bricks[i].offset.left - Math.floor((that.ball.ballSize / 2)) && 
-					that.ball.ball().offsetLeft <= that.bricks[i].offset.left + that.bricks[i].brickWidth + Math.ceil((that.ball.ballSize / 2)) &&
+					that.ball.ball().offsetLeft >= that.bricks[i].offset.left - Math.ceil((that.ball.ballSize / 2)) && 
+					that.ball.ball().offsetLeft <= that.bricks[i].offset.left + that.bricks[i].brickWidth &&
 					that.bricks[i + that.bricksInRow] == undefined) {
 					that.bricks[i].collision();
 					console.log('bottom side');
