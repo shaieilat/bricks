@@ -1,4 +1,5 @@
-function Brick() {
+function Brick(brickIndex) {
+	this.brickIndex = brickIndex;
 	this.brickWidth = 80;
 	this.brickHeight = 30;
 	this.brickClass = 'brick';
@@ -27,6 +28,6 @@ Brick.prototype.setOffset = function() {
 
 Brick.prototype.collision = function() {
 	this.getBrick().style.visibility = 'hidden';
- 	game.bricks.splice(game.bricks.indexOf(this),1);
+ 	game.bricks[this.brickIndex] = undefined;
  	console.log(game.bricks.length);
 }

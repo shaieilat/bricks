@@ -57,3 +57,7 @@ Ball.prototype.move = function() {
 	},1);
 
 }
+
+Ball.prototype.stop = function() {
+	clearInterval(this.ballInterval);
+}
