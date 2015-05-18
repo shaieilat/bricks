@@ -1,4 +1,6 @@
 function Brick(brickIndex) {
+
+	//
 	this.brickIndex = brickIndex;
 	this.brickWidth = 80;
 	this.brickHeight = 30;
@@ -7,6 +9,7 @@ function Brick(brickIndex) {
 	this.offset = {};
 	this.collided = false;
 
+	//
 	this.appendBrick();
 }
 
@@ -29,5 +32,7 @@ Brick.prototype.setOffset = function() {
 Brick.prototype.collision = function() {
 	this.getBrick().style.visibility = 'hidden';
  	game.bricks[this.brickIndex] = undefined;
- 	console.log(game.bricks.length);
+ 	if (game.bricks.concat().sort()[0] == game.bricks.concat().sort()[game.bricks.length]) {
+ 		game.win();
+ 	}
 }

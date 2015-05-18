@@ -4,13 +4,71 @@ body {
 	height: 100%;
 	width: 100%;
 	position: absolute;
+	font-family: 'ABeeZee', sans-serif;
+}
+
+.intro {
+	position: absolute;
+	width: 600px;
+	height: 350px;
+	top: 50%;
+	left: 50%;
+	margin-top: -175px;
+	margin-left: -300px;
+	background: #fff;
+	box-shadow: 0 0 10px #333;
+	text-align: center;
+	z-index: 9999999999;
+}
+
+.intro h1 {
+	font-family: 'Lobster', cursive;
+	font-size: 72px;
+	margin: 35px 0 20px 0;
+}
+
+.intro h2 {
+	font-size: 22px;
+	margin: 20px 0 20px 0;	
+}
+
+.intro #githubribbon {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 149px;
+	height: 149px;
+}
+
+.intro .view-on-github {
+	text-decoration: none;
+	color: #666;
+}
+
+.intro .view-on-github:hover {
+	text-decoration: underline;
+}
+
+.intro .instructions-container {
+	margin-top: 30px;
+	font-size: 13px;
+}
+
+.intro .instructions-container div {
+	margin-bottom: 20px;
+}
+
+.intro .instructions-container span {
+	background: #eee;
+	padding: 4px;
+	border-radius: 5px;
 }
 
 .controller {
 	position: absolute; 
 	bottom: 20px;
-	width: 30%;
-	left: 35%;
+	width: 100%;
+	left: 0%;
 	height: 50px;
 	background: #eee;
 	transition: all 0.2s;

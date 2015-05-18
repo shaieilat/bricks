@@ -1,4 +1,5 @@
 var Controller = function() {
+	
 	//
 	this.controllerId = 'C_'+ (Math.floor(Math.random() * 100));
 	this.pageMargin = 2;
@@ -10,7 +11,6 @@ var Controller = function() {
 
 	//
 	this.init();
-	//
 }
 
 Controller.prototype.init = function() {
@@ -18,7 +18,7 @@ Controller.prototype.init = function() {
 	this.attachEvent();
 }
 
-Controller.prototype.controller = function() {
+Controller.prototype.getController = function() {
 	return document.getElementById(this.controllerId);
 }
 
@@ -37,26 +37,26 @@ Controller.prototype.attachEvent = function() {
 		} else if (e.keyCode == 37) {
 			that.moveLeft();
 		}
-	});
+	}, false);
 }
 
 Controller.prototype.moveLeft = function() {
-	if (this.controller().offsetLeft < this.controllerMoveSpeed) {
-		this.controller().style.left =  '0px';
-	} else if (this.controller().offsetLeft > this.pageMargin) {
-		this.controller().style.left = this.controller().offsetLeft - this.controllerMoveSpeed + 'px';
+	if (this.getController().offsetLeft < this.controllerMoveSpeed) {
+		this.getController().style.left =  '0px';
+	} else if (this.getController().offsetLeft > this.pageMargin) {
+		this.getController().style.left = this.getController().offsetLeft - this.controllerMoveSpeed + 'px';
 	}
 }
 
 Controller.prototype.moveRight = function() {
-	if (this.controller().offsetLeft  + this.getControllerWidth() > game.gameWidth - this.controllerMoveSpeed) {
-		this.controller().style.left =  game.gameWidth - this.getControllerWidth() + 'px';
-	} else if (this.controller().offsetLeft < game.gameWidth - this.getControllerWidth() - this.pageMargin) {
-		this.controller().style.left = this.controller().offsetLeft + this.controllerMoveSpeed + 'px';
+	if (this.getController().offsetLeft  + this.getControllerWidth() > game.gameWidth - this.controllerMoveSpeed) {
+		this.getController().style.left =  game.gameWidth - this.getControllerWidth() + 'px';
+	} else if (this.getController().offsetLeft < game.gameWidth - this.getControllerWidth() - this.pageMargin) {
+		this.getController().style.left = this.getController().offsetLeft + this.controllerMoveSpeed + 'px';
 	}
 }
 
 Controller.prototype.getControllerWidth = function() {
-	var s = getComputedStyle(this.controller());
+	var s = getComputedStyle(this.getController());
 	return parseFloat(s.getPropertyValue('width'));
 }
