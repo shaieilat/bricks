@@ -67,8 +67,8 @@ body {
 .controller {
 	position: absolute; 
 	bottom: 20px;
-	width: 100%;
-	left: 0%;
+	width: 30%;
+	left: 35%;
 	height: 50px;
 	background: #eee;
 	transition: all 0.2s;
